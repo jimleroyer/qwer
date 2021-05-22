@@ -1,3 +1,8 @@
+mod cli;
+mod commands;
+mod config;
+
 fn main() {
-    println!("qwer!");
+    let value = crate::cli::parse();
+    value.subcmd.call(value.config);
 }
